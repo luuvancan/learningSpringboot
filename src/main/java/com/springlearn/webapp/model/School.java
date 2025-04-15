@@ -9,39 +9,30 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "SCHOOL")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Table(name = "shools") // Xem lại convention namming (all ) 
+
 public class School {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id ;
+    private Long id;
 
     @Column(nullable =false)
-    private String name ;
+    private String name;
 
     @Column(nullable = false)
-    private String address ;
+    private String address;
 
     @OneToMany(mappedBy = "school")
-    private List<Class>classes;
+    private List<Classies> classes;
     
-    //Constructor
-
-    public School() {}
-    public School(String name, String address) {
-        this.name = name;
-        this.address = address;
-    }
-
-
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-    public String getAddress() { return address; }
-    public void setAddress(String address) { this.address = address; }
-    public List<Class> getClasses() { return classes; }
-    public void setClasses(List<Class> classes) { this.classes = classes; }
-
 }

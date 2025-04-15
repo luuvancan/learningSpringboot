@@ -51,7 +51,46 @@
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
+		<!-- enabled Cache hibernate  -->
+		 <!-- <dependency> -->
+			<!-- <groupId>org.hibernate</groupId> -->
+			<!-- <artifactId>hibernate-ehcache</artifactId> -->
+			<!-- <version>6.0.0.Final</version> Cập nhật theo phiên bản Hibernate của bạn -->
+		<!-- </dependency> -->
+		
+		<!-- Su dung thay the cho hibernate ehcache due to spring boot version 3.x removed EhCacheManagerFactoryBean -->
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>2.10.9.2</version>
+		</dependency>
+		<!-- Lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.30</version> <!-- Use latest version if available -->
+			<scope>provided</scope>
+		</dependency>
+		<!-- Flyway -->
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+			<version>9.22.3</version>
+		</dependency>
+		<!-- Mapstruct -->
+		<dependency>
+        	<groupId>org.mapstruct</groupId>
+        	<artifactId>mapstruct</artifactId>
+        	<version>1.6.3</version>
+    	</dependency>	
+		<!-- Mapstruct Processor -->
+		<!-- Annotation Processor -->
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct-processor</artifactId>
+			<version>1.6.3</version>
+			<scope>provided</scope>
+		</dependency>
 
 	</dependencies>
 
@@ -63,6 +102,7 @@
 			</plugin>
 		</plugins>
 	</build>
+
 	<repositories>
 		<repository>
 			<id>spring-milestones</id>
@@ -81,6 +121,7 @@
 			</releases>
 		</repository>
 	</repositories>
+	
 	<pluginRepositories>
 		<pluginRepository>
 			<id>spring-milestones</id>
