@@ -19,11 +19,8 @@ import java.util.List;
 @AllArgsConstructor
 public class ClassService {
     
-    @NonNull
     private final ClassReponsitory classReponsitory;
-    @NonNull
     private final IClassiesMapper classiesMapper;
-    @Nonnull
     private final SchoolReponsitory schoolReponsitory;
     
     //Get All
@@ -31,11 +28,12 @@ public class ClassService {
         return classReponsitory.findAll();
     }
     //Create 
-    public void createClass(@NonNull ClassDTO classDTO){
+    public ClassDTO createClass(@NonNull ClassDTO classDTO){
         School school = schoolReponsitory.findById(classDTO.getSchool_id())
         .orElseThrow(() -> new RuntimeException("School not found"));
         Classies classies = classiesMapper.toEntity(classDTO,school);
-        classReponsitory.save(classies);
+        Classies result = classReponsitory.save(classies);
+        return classiesMapper.toDTO(result);
     }
     //Update 
     public void updateClass(@NonNull Classies classies){

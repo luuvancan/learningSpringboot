@@ -2,6 +2,7 @@ package com.springlearn.webapp.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springlearn.webapp.dto.StudentDTO;
 import com.springlearn.webapp.model.Student;
 import com.springlearn.webapp.service.StudentService;
 import lombok.NonNull;
@@ -24,7 +25,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @RequestMapping("/students")
 public class StudentController {
 
-    @NonNull // Dung @NonNull hoặc là Final
+    // Dung @NonNull hoặc là Final
     private final StudentService studentService;
 
     @GetMapping()
@@ -32,20 +33,20 @@ public class StudentController {
         return studentService.getAllStudent();
     }
     @PostMapping("/create")
-    public void createStudent(@RequestBody Student student) {
-        this.studentService.createStudent(student);
+    public StudentDTO createStudent(@RequestBody StudentDTO studentDTO) {
+        return this.studentService.createStudent(studentDTO);
     }
     @GetMapping("/find/{id}")
-    public Student findStudentById(@RequestParam Long id) {
+    public Student findStudentById(@PathVariable("id") Long id) {
         return this.studentService.getStudentById(id);
     }
-    @PutMapping("/update/{id}")
-    public void updateStudentById(@PathVariable Long id ,@RequestBody Student student) {
+    @PutMapping("/update")
+    public void updateStudentById(@RequestParam(name = "id", required = true) Long id ,@RequestBody Student student) {
         this.studentService.updateStudent(student);
     }
     
-    @DeleteMapping("/delete/{id}")
-    public void deleteStudentById(@PathVariable Long id){
+    @DeleteMapping("/{id}")
+    public void deleteStudentById(@PathVariable("id") Long id){
         this.studentService.deleteStudent(id);
     }
     

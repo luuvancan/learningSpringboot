@@ -3,24 +3,35 @@ package com.springlearn.webapp.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+
+import com.springlearn.webapp.dto.StudentDTO;
+import com.springlearn.webapp.dto.mapstruct.IStudentMapper;
+import com.springlearn.webapp.model.Classies;
 import com.springlearn.webapp.model.Student;
+import com.springlearn.webapp.reponsitory.ClassReponsitory;
 import com.springlearn.webapp.reponsitory.StudentReponsitory;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 @Service
 @AllArgsConstructor
 public class StudentService {
-    @NonNull
     private final StudentReponsitory studentRepository;
+    private final ClassReponsitory classReponsitory;
+    private final IStudentMapper studentMapper;
 
     //Get All
     public List<Student> getAllStudent(){
         return this.studentRepository.findAll();
     }
     //Create 
-    public void createStudent(@NonNull Student student){
-        this.studentRepository.save(student);
+    public StudentDTO createStudent(@NonNull StudentDTO studentDTO){
+        Classies classies = classReponsitory.findById(studentDTO.getClass_Id())
+        .orElseThrow(() -> new RuntimeException("Class not found"));
+        Student student = studentMapper.toEntity(studentDTO,classies);
+        Student result = studentRepository.save(student);
+        return studentMapper.toDTO(result);
     }
     //Update 
     public void updateStudent(@NonNull Student student){

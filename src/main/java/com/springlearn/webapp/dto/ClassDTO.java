@@ -14,8 +14,6 @@ import lombok.NonNull;
  * 
  */
 public class ClassDTO {
-    @NonNull
     private String name;
-    @NonNull
     private Long school_id;
 }

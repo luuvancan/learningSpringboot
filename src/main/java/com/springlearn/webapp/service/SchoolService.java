@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.springlearn.webapp.dto.SchoolDTO;
+import com.springlearn.webapp.dto.mapstruct.ISchoolMapper;
 import com.springlearn.webapp.model.School;
 import com.springlearn.webapp.reponsitory.SchoolReponsitory;
 
@@ -13,11 +15,12 @@ import lombok.NonNull;
 @Service
 @AllArgsConstructor
 public class SchoolService {
-    @NonNull
     private final SchoolReponsitory schoolRepository;
+    private final ISchoolMapper iSchoolMapper;
     //Create 
-    public void createSchool(@NonNull School school) {
-        this.schoolRepository.save(school);
+    public SchoolDTO createSchool(@NonNull School school) {
+        School result = this.schoolRepository.save(school);
+        return iSchoolMapper.toDTO(result);
     }
     //Read 
     public List<School> getAllSchool() {
