@@ -1,10 +1,10 @@
-package com.springlearn.webapp.dto.mapstruct;
+package com.springlearn.webapp.domain.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import com.springlearn.webapp.dto.SchoolDTO;
-import com.springlearn.webapp.model.School;
+import com.springlearn.webapp.domain.dto.SchoolDTO;
+import com.springlearn.webapp.domain.model.School;
 
 @Mapper(componentModel = "spring")
 public interface ISchoolMapper {

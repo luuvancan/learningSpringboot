@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.springlearn.webapp.dto.SchoolDTO;
-import com.springlearn.webapp.dto.mapstruct.ISchoolMapper;
-import com.springlearn.webapp.model.School;
+import com.springlearn.webapp.domain.dto.SchoolDTO;
+import com.springlearn.webapp.domain.mapper.ISchoolMapper;
+import com.springlearn.webapp.domain.model.School;
 import com.springlearn.webapp.reponsitory.SchoolReponsitory;
 
 import lombok.AllArgsConstructor;

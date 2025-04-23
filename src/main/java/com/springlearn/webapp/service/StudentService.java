@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.springlearn.webapp.dto.StudentDTO;
-import com.springlearn.webapp.dto.mapstruct.IStudentMapper;
-import com.springlearn.webapp.model.Classies;
-import com.springlearn.webapp.model.Student;
+import com.springlearn.webapp.domain.dto.StudentDTO;
+import com.springlearn.webapp.domain.mapper.IStudentMapper;
+import com.springlearn.webapp.domain.model.Classies;
+import com.springlearn.webapp.domain.model.Student;
 import com.springlearn.webapp.reponsitory.ClassReponsitory;
 import com.springlearn.webapp.reponsitory.StudentReponsitory;
 import lombok.AllArgsConstructor;

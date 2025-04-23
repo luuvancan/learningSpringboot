@@ -1,7 +1,9 @@
 package com.springlearn.webapp.reponsitory;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.springlearn.webapp.model.School;
+
+import com.springlearn.webapp.domain.model.School;
+
 import java.util.List;
 
 

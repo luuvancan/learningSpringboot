@@ -2,8 +2,8 @@ package com.springlearn.webapp.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springlearn.webapp.dto.StudentDTO;
-import com.springlearn.webapp.model.Student;
+import com.springlearn.webapp.domain.dto.StudentDTO;
+import com.springlearn.webapp.domain.model.Student;
 import com.springlearn.webapp.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;

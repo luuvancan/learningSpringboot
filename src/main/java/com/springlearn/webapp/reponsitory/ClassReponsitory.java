@@ -2,7 +2,8 @@ package com.springlearn.webapp.reponsitory;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.springlearn.webapp.model.Classies;
+
+import com.springlearn.webapp.domain.model.Classies;
 
 /*  Các JpaReponsitory là lớp tiện ích được mở rộng từ lớp PagingAndSortingRepository & CrudRepository
 *  - JpaReponsitory là cầu nối giữa Java và Database thông qua các đặc tả JPA mà nhà cung cấp là Hibernate.

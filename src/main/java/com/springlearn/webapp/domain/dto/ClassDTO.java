@@ -1,4 +1,4 @@
-package com.springlearn.webapp.dto;
+package com.springlearn.webapp.domain.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

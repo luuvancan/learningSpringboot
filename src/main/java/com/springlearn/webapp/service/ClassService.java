@@ -2,10 +2,10 @@ package com.springlearn.webapp.service;
 
 import org.springframework.stereotype.Service;
 
-import com.springlearn.webapp.dto.ClassDTO;
-import com.springlearn.webapp.dto.mapstruct.IClassiesMapper;
-import com.springlearn.webapp.model.Classies;
-import com.springlearn.webapp.model.School;
+import com.springlearn.webapp.domain.dto.ClassDTO;
+import com.springlearn.webapp.domain.mapper.IClassiesMapper;
+import com.springlearn.webapp.domain.model.Classies;
+import com.springlearn.webapp.domain.model.School;
 import com.springlearn.webapp.reponsitory.ClassReponsitory;
 import com.springlearn.webapp.reponsitory.SchoolReponsitory;
 

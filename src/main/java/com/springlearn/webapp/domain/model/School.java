@@ -1,13 +1,13 @@
-package com.springlearn.webapp.model;
+package com.springlearn.webapp.domain.model;
+
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,20 +19,20 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "students")
-// @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class Student {
+@Table(name = "schools") // Xem lại convention namming (all ) 
+
+public class School {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @Column(nullable =false)
     private String name;
 
-    @Column
-    private Integer age;
+    @Column(nullable = false)
+    private String address;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "class_id", nullable = false)
-    private Classies myClass;
+    @OneToMany(mappedBy = "school")
+    private List<Classies> classes;
+    
 }

@@ -3,10 +3,9 @@ package com.springlearn.webapp.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springlearn.webapp.dto.SchoolDTO;
-import com.springlearn.webapp.model.School;
+import com.springlearn.webapp.domain.dto.SchoolDTO;
+import com.springlearn.webapp.domain.model.School;
 import com.springlearn.webapp.service.SchoolService;
-import io.micrometer.common.lang.NonNull;
 import lombok.RequiredArgsConstructor;
 import java.util.List;
 

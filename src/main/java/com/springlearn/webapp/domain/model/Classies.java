@@ -1,4 +1,4 @@
-package com.springlearn.webapp.model;
+package com.springlearn.webapp.domain.model;
 
 import java.util.List;
 

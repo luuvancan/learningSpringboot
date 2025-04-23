@@ -1,4 +1,4 @@
-package com.springlearn.webapp.dto;
+package com.springlearn.webapp.domain.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SchoolDTO {
+public class StudentDTO {
     private String name;
-    private String address;
+    private Integer age;
+    private Long class_Id;
 }

@@ -1,13 +1,13 @@
-package com.springlearn.webapp.dto.mapstruct;
+package com.springlearn.webapp.domain.mapper;
 
 
 import org.mapstruct.Mapping;
 import org.mapstruct.Context;
 import org.mapstruct.Mapper;
 
-import com.springlearn.webapp.dto.ClassDTO;
-import com.springlearn.webapp.model.Classies;
-import com.springlearn.webapp.model.School;
+import com.springlearn.webapp.domain.dto.ClassDTO;
+import com.springlearn.webapp.domain.model.Classies;
+import com.springlearn.webapp.domain.model.School;
 
 @Mapper(componentModel = "spring")
 public interface IClassiesMapper {

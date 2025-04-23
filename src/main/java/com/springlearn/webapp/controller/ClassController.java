@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springlearn.webapp.dto.ClassDTO;
-import com.springlearn.webapp.model.Classies;
+import com.springlearn.webapp.domain.dto.ClassDTO;
+import com.springlearn.webapp.domain.model.Classies;
 import com.springlearn.webapp.service.ClassService;
 
 import lombok.RequiredArgsConstructor;
