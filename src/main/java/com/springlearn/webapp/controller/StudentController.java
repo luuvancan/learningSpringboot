@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.springlearn.webapp.dto.StudentDTO;
 import com.springlearn.webapp.model.Student;
 import com.springlearn.webapp.service.StudentService;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,8 +14,8 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 
@@ -40,9 +39,9 @@ public class StudentController {
     public Student findStudentById(@PathVariable("id") Long id) {
         return this.studentService.getStudentById(id);
     }
-    @PutMapping("/update")
-    public void updateStudentById(@RequestParam(name = "id", required = true) Long id ,@RequestBody Student student) {
-        this.studentService.updateStudent(student);
+    @PatchMapping("/update")
+    public void updateStudentById(@RequestParam(name = "id", required = true) Long id ,@RequestBody StudentDTO studentDTO) {
+        this.studentService.updateStudent(id,studentDTO);
     }
     
     @DeleteMapping("/{id}")

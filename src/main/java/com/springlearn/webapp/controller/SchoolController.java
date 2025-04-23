@@ -18,10 +18,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PutMapping;
 
-
-
-
-
 @RestController // kết hợp @Controller (Trong MVC , thường trả về view ) & @ResponseBody (JSON/XML)
 @RequiredArgsConstructor
 @RequestMapping("/schools")

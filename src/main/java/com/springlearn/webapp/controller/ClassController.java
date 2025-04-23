@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,12 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.springlearn.webapp.dto.ClassDTO;
 import com.springlearn.webapp.model.Classies;
 import com.springlearn.webapp.service.ClassService;
-import com.springlearn.webapp.service.SchoolService;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
@@ -25,7 +24,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RequestMapping("/class")
 public class ClassController {
     private final ClassService classService;
-    private final SchoolService schoolService;
 
     //Get All 
     @GetMapping()
@@ -43,9 +41,9 @@ public class ClassController {
         return classService.getClassById(id);
     }
     //Update
-    @PutMapping("/update")
-    public void updateClass(@RequestParam(name = "id", required = true) Long id,@RequestBody Classies classies) {
-        classService.updateClass(classies);
+    @PatchMapping("/update")
+    public void updateClass(@RequestParam(name = "id", required = true) Long id,@RequestBody ClassDTO classDTO) {
+        classService.updateClass(id,classDTO);
     }
     //Delete
     @DeleteMapping("/{id}")

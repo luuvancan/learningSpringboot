@@ -8,8 +8,9 @@ import com.springlearn.webapp.model.School;
 
 @Mapper(componentModel = "spring")
 public interface ISchoolMapper {
-    @Mapping(source = "dto.name",target="name")
-    @Mapping(source = "dto.address",target="address")
+
+    @Mapping(source = "dto.name", target = "name")
+    @Mapping(source = "dto.address", target = "address")
     @Mapping(target = "classes", ignore = true)
     School toEntity(SchoolDTO dto , School school);
 

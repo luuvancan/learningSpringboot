@@ -4,10 +4,10 @@
 -- Xóa các bảng nếu tồn tại (theo thứ tự ngược để xử lý khóa ngoại)
 DROP TABLE IF EXISTS students CASCADE;
 DROP TABLE IF EXISTS classies CASCADE;
-DROP TABLE IF EXISTS shools CASCADE;
+DROP TABLE IF EXISTS schools CASCADE;
 
 -- Tạo bảng shools
-CREATE TABLE shools (
+CREATE TABLE schools (
     id BIGSERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     address VARCHAR(255) NOT NULL
@@ -18,7 +18,7 @@ CREATE TABLE classies (
     id BIGSERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     school_id BIGINT NOT NULL,
-    CONSTRAINT fk_classies_school FOREIGN KEY (school_id) REFERENCES shools(id)
+    CONSTRAINT fk_classies_school FOREIGN KEY (school_id) REFERENCES schools(id)
 );
 
 -- Tạo bảng students

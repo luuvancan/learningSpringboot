@@ -31,12 +31,19 @@ public class ClassService {
     public ClassDTO createClass(@NonNull ClassDTO classDTO){
         School school = schoolReponsitory.findById(classDTO.getSchool_id())
         .orElseThrow(() -> new RuntimeException("School not found"));
-        Classies classies = classiesMapper.toEntity(classDTO,school);
+        Classies classies = classiesMapper.toEntity(classDTO,school,false);
         Classies result = classReponsitory.save(classies);
         return classiesMapper.toDTO(result);
     }
     //Update 
-    public void updateClass(@NonNull Classies classies){
+    public void updateClass(@Nonnull Long id,@NonNull ClassDTO classDTO){
+        if(id == null){
+            throw new IllegalArgumentException("Class ID must not be null");
+        }
+        School school = schoolReponsitory.findById(classDTO.getSchool_id())
+        .orElseThrow(() -> new RuntimeException("School not found"));
+        Classies classies = classiesMapper.toEntity(classDTO,school,true);
+        classies.setId(id);
         this.classReponsitory.save(classies);
     }
     //Delete

@@ -9,3 +9,4 @@ import java.util.List;
 public interface SchoolReponsitory extends JpaRepository<School,Long>{
     List<School> findByName(String name);
 }
+// Đặc tả : JPa , thao tác vs đối tượng  => Hibernate người thực hiện.

@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "shools") // Xem lại convention namming (all ) 
+@Table(name = "schools") // Xem lại convention namming (all ) 
 
 public class School {
     @Id

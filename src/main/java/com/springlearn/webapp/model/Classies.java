@@ -38,8 +38,9 @@ public class Classies {
     @JoinColumn(name = "school_id", nullable = false)
     private School school;
 
-    @OneToMany(mappedBy = "myClass", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "myClass", cascade = CascadeType.ALL, fetch = FetchType.LAZY) //EAGGER /
     private List<Student> students;
+    // LAZY  : khi chạy Classies a = new Classies (); a.students nó mới lấy từ DB về 
     
     public Classies(String name, School school) {
         this.name = name;
