@@ -26,12 +26,12 @@ public class SchoolController {
 
     //Get All
     @GetMapping
-    public List<School> getAllSchools() {
+    public List<SchoolDTO> getAllSchools() {
         return this.schoolService.getAllSchool();
     }
     // @RequestMapping( value = "/create",method = RequestMethod.POST) Trên và dưới là tương đương nhau
     @PostMapping("/create")
-    public SchoolDTO createSchool(@RequestBody School school) {
+    public School createSchool(@RequestBody School school) {
         return this.schoolService.createSchool(school);
     }
     //find
@@ -41,8 +41,8 @@ public class SchoolController {
     }
     //update
     @PutMapping("/update")
-    public void updateSchoolById(@RequestParam(name = "id", required = true) Long id, @RequestBody School school) {
-        this.schoolService.updateSchool(school);
+    public void updateSchoolById(@RequestParam(name = "id", required = true) Long id, @RequestBody SchoolDTO schoolDTO) {
+        this.schoolService.updateSchool(id,schoolDTO);
     }
     //delete
     @DeleteMapping("/{id}")

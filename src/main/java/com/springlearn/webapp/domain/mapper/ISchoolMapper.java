@@ -8,7 +8,6 @@ import com.springlearn.webapp.domain.model.School;
 
 @Mapper(componentModel = "spring")
 public interface ISchoolMapper {
-
     @Mapping(source = "dto.name", target = "name")
     @Mapping(source = "dto.address", target = "address")
     @Mapping(target = "classes", ignore = true)
@@ -16,3 +15,4 @@ public interface ISchoolMapper {
 
     SchoolDTO toDTO (School entity);
 }
+

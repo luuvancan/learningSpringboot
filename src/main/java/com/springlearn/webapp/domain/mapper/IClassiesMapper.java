@@ -1,6 +1,5 @@
 package com.springlearn.webapp.domain.mapper;
 
-
 import org.mapstruct.Mapping;
 import org.mapstruct.Context;
 import org.mapstruct.Mapper;
@@ -16,8 +15,8 @@ public interface IClassiesMapper {
     @Mapping(source = "school", target = "school")
     @Mapping(target = "students", ignore = true)
     @Mapping(target ="id" , ignore = true , conditionExpression = "java(!hasId)")
-    Classies toEntity(ClassDTO dto, School school ,@Context boolean hasId);
+    Classies toEntity(ClassDTO dto, School school, @Context boolean hasId);
 
     @Mapping(source = "school.id", target = "school_id")
     ClassDTO toDTO(Classies entity);
-} 
+}

@@ -91,6 +91,38 @@
 			<version>1.6.3</version>
 			<scope>provided</scope>
 		</dependency>
+		
+		<!-- FOR REDIS CACHE -->
+		<!-- Redis Cache  -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		<!-- Automatic Cache method using Annotation Instead. -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+		<!-- <dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency> -->
+
+		<!-- Redis Client : Creating TCP to Redis Server , Send / Receive  -->
+		<!-- <dependency>
+			<groupId>io.lettuce</groupId>
+			<artifactId>lettuce-core</artifactId>
+			<version>6.3.2</version>
+		</dependency> -->
+
+		<!-- KAFKA -->
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+		</dependency>
+
+
+
 
 	</dependencies>
 
